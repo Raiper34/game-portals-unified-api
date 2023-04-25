@@ -1,3 +1,7 @@
+- :heavy_check_mark: implemented in unified API
+- :x: not included in individual API
+- :o: included in individual API, but not implemented in unified API
+
 |                | Init                | Midgame ad          | Rewarded ad        | Achievements | Highscore |
 |----------------|---------------------|---------------------|--------------------|--------------|-----------|
 | Crazygames     |                     |                     |                    |              |           |
