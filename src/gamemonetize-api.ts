@@ -1,5 +1,7 @@
 import {BasePortalApi} from "./base-portal-api";
 
+const API_URL = 'https://api.gamemonetize.com/sdk.js';
+
 export class GamemonetizeApi extends BasePortalApi {
 
     gamePauseFn?: () => void;
@@ -8,7 +10,7 @@ export class GamemonetizeApi extends BasePortalApi {
     init(gameId: string): void {
         (window as any).SDK_OPTIONS = {
             gameId,
-            onEvent: (a) => {
+            onEvent: (a: any) => {
                 switch (a.name) {
                     case "SDK_GAME_PAUSE":
                         this.gamePauseFn && this.gamePauseFn();
@@ -21,9 +23,9 @@ export class GamemonetizeApi extends BasePortalApi {
                 }
             }
         };
-        (function (a: any, b: any, c: any) {
-            var d = a.getElementsByTagName(b)[0];
-            a.getElementById(c) || (a = a.createElement(b), a.id = c, a.src = "https://api.gamemonetize.com/sdk.js", d.parentNode.insertBefore(a, d))
+        ((a: any, b: any, c: any) => {
+            const d = a.getElementsByTagName(b)[0];
+            a.getElementById(c) || (a = a.createElement(b), a.id = c, a.src = API_URL, d.parentNode.insertBefore(a, d))
         })(document, "script", "gamemonetize-sdk");
     }
 

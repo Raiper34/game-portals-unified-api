@@ -1,0 +1,25 @@
+{
+  "name": "game-portals-unified-api",
+  "version": "0.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "npx tsc && browserify dist/index.js -o dist/browser-bundle.js -s gpuApi",
+    "publish": "npm run build && npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Raiper34/game-portals-unified-api.git"
+  },
+  "author": "Raiper34",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Raiper34/game-portals-unified-api/issues"
+  },
+  "homepage": "https://github.com/Raiper34/game-portals-unified-api#readme",
+  "devDependencies": {
+    "browserify": "^17.0.0",
+    "typescript": "^5.0.4"
+  }
+}
