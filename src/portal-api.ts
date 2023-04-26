@@ -1,4 +1,4 @@
-import {BasePortalApi} from "./base-portal-api";
+import {BasePortalApi, SupportedFunctionalityEnum} from "./base-portal-api";
 import {GamemonetizeApi} from "./gamemonetize-api";
 import {GamedistributeApi} from "./gamedistribute-api";
 
@@ -29,5 +29,9 @@ export class PortalApi {
 
     static showRewardedAd(gamePauseFn?: () => void, gameResumeFn?: () => void): void {
         PortalApi.api.showRewardedAd(gamePauseFn, gameResumeFn);
+    }
+
+    static isFunctionalitySupported(functionality: SupportedFunctionalityEnum): boolean {
+        return PortalApi.api.isFunctionalitySupported(functionality);
     }
 }

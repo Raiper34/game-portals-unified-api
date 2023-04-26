@@ -5,7 +5,7 @@
 |                | Init                | Midgame ad          | Rewarded ad | Achievements | Highscore |
 |----------------|---------------------|---------------------|-------------|--------------|-----------|
 | Crazygames     |                     |                     |             |              |           |
-| Gamepix        |                     |                     |             |              |           |
+| Gamepix        | :heavy_check_mark:  | :heavy_check_mark:  | :o:         | :x:          | :o:       |
 | GameMonetize   | :heavy_check_mark:  | :heavy_check_mark:  | :x:         | :x:          | :x:       |
 | GameDistribute | :heavy_check_mark:  | :heavy_check_mark:  | :o:         | :x:          | :x:       | 
 | GameArter      |                     |                     |             |              |           |

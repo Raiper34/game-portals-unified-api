@@ -1,11 +1,18 @@
-import {BasePortalApi} from "./base-portal-api";
+import {BasePortalApi, SupportedFunctionalityEnum} from "./base-portal-api";
 
 const API_URL = 'https://api.gamemonetize.com/sdk.js';
+const SUPPORTED_FUNCTIONALITY = [
+    SupportedFunctionalityEnum.MidgameAd,
+];
 
 export class GamemonetizeApi extends BasePortalApi {
 
     gamePauseFn?: () => void;
     gameResumeFn?: () => void;
+
+    constructor() {
+        super(API_URL, SUPPORTED_FUNCTIONALITY);
+    }
 
     init(gameId: string): void {
         (window as any).SDK_OPTIONS = {
@@ -25,7 +32,7 @@ export class GamemonetizeApi extends BasePortalApi {
         };
         ((a: any, b: any, c: any) => {
             const d = a.getElementsByTagName(b)[0];
-            a.getElementById(c) || (a = a.createElement(b), a.id = c, a.src = API_URL, d.parentNode.insertBefore(a, d))
+            a.getElementById(c) || (a = a.createElement(b), a.id = c, a.src = this.apiUrl, d.parentNode.insertBefore(a, d))
         })(document, "script", "gamemonetize-sdk");
     }
 

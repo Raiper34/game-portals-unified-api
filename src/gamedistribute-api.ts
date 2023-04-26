@@ -1,11 +1,19 @@
-import {BasePortalApi} from "./base-portal-api";
+import {BasePortalApi, SupportedFunctionalityEnum} from "./base-portal-api";
 
 const API_URL = 'https://html5.api.gamedistribution.com/main.min.js';
+const SUPPORTED_FUNCTIONALITY = [
+    SupportedFunctionalityEnum.MidgameAd,
+    SupportedFunctionalityEnum.RewardedAd,
+];
 
 export class GamedistributeApi extends BasePortalApi {
 
     gamePauseFn?: () => void;
     gameResumeFn?: () => void;
+
+    constructor() {
+        super(API_URL, SUPPORTED_FUNCTIONALITY);
+    }
 
     init(gameId: string): void {
         (window as any)["GD_OPTIONS"] = {
@@ -28,7 +36,7 @@ export class GamedistributeApi extends BasePortalApi {
             if (d.getElementById(id)) return;
             js = d.createElement(s) as HTMLScriptElement;
             js.id = id;
-            js.src = API_URL;
+            js.src = this.apiUrl;
             fjs.parentNode!.insertBefore(js, fjs);
         })(document, 'script', 'gamedistribution-jssdk');
     }
